@@ -1,0 +1,1816 @@
+[33mcommit 20315430d7b9d8381024f9cd611817fd0c16c96c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Gaurav <gaurav.solapure07@gmail.com>
+Date:   Tue Jun 7 09:27:36 2022 +0530
+
+    final commit
+
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/.gitignore b/FinalBackEndProgramOnExamPortal/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..549e00a[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/.gitignore[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32mHELP.md[m
+[32m+[m[32mtarget/[m
+[32m+[m[32m!.mvn/wrapper/maven-wrapper.jar[m
+[32m+[m[32m!**/src/main/**/target/[m
+[32m+[m[32m!**/src/test/**/target/[m
+[32m+[m
+[32m+[m[32m### STS ###[m
+[32m+[m[32m.apt_generated[m
+[32m+[m[32m.classpath[m
+[32m+[m[32m.factorypath[m
+[32m+[m[32m.project[m
+[32m+[m[32m.settings[m
+[32m+[m[32m.springBeans[m
+[32m+[m[32m.sts4-cache[m
+[32m+[m
+[32m+[m[32m### IntelliJ IDEA ###[m
+[32m+[m[32m.idea[m
+[32m+[m[32m*.iws[m
+[32m+[m[32m*.iml[m
+[32m+[m[32m*.ipr[m
+[32m+[m
+[32m+[m[32m### NetBeans ###[m
+[32m+[m[32m/nbproject/private/[m
+[32m+[m[32m/nbbuild/[m
+[32m+[m[32m/dist/[m
+[32m+[m[32m/nbdist/[m
+[32m+[m[32m/.nb-gradle/[m
+[32m+[m[32mbuild/[m
+[32m+[m[32m!**/src/main/**/build/[m
+[32m+[m[32m!**/src/test/**/build/[m
+[32m+[m
+[32m+[m[32m### VS Code ###[m
+[32m+[m[32m.vscode/[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.jar b/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.jar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c1dd12f[m
+Binary files /dev/null and b/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.jar differ
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.properties b/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b7cb93e[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/.mvn/wrapper/maven-wrapper.properties[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mdistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.4/apache-maven-3.8.4-bin.zip[m
+[32m+[m[32mwrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/mvnw b/FinalBackEndProgramOnExamPortal/mvnw[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a8fb22[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/mvnw[m
+[36m@@ -0,0 +1,316 @@[m
+[32m+[m[32m#!/bin/sh[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m# or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m# distributed with this work for additional information[m
+[32m+[m[32m# regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m# to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m# "License"); you may not use this file except in compliance[m
+[32m+[m[32m# with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m#[m
+[32m+[m[32m#    https://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m#[m
+[32m+[m[32m# Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m# software distributed under the License is distributed on an[m
+[32m+[m[32m# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m# KIND, either express or implied.  See the License for the[m
+[32m+[m[32m# specific language governing permissions and limitations[m
+[32m+[m[32m# under the License.[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Maven Start Up Batch script[m
+[32m+[m[32m#[m
+[32m+[m[32m# Required ENV vars:[m
+[32m+[m[32m# ------------------[m
+[32m+[m[32m#   JAVA_HOME - location of a JDK home dir[m
+[32m+[m[32m#[m
+[32m+[m[32m# Optional ENV vars[m
+[32m+[m[32m# -----------------[m
+[32m+[m[32m#   M2_HOME - location of maven2's installed home dir[m
+[32m+[m[32m#   MAVEN_OPTS - parameters passed to the Java VM when running Maven[m
+[32m+[m[32m#     e.g. to debug Maven itself, use[m
+[32m+[m[32m#       set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000[m
+[32m+[m[32m#   MAVEN_SKIP_RC - flag to disable loading of mavenrc files[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32mif [ -z "$MAVEN_SKIP_RC" ] ; then[m
+[32m+[m
+[32m+[m[32m  if [ -f /usr/local/etc/mavenrc ] ; then[m
+[32m+[m[32m    . /usr/local/etc/mavenrc[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  if [ -f /etc/mavenrc ] ; then[m
+[32m+[m[32m    . /etc/mavenrc[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  if [ -f "$HOME/.mavenrc" ] ; then[m
+[32m+[m[32m    . "$HOME/.mavenrc"[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# OS specific support.  $var _must_ be set to either true or false.[m
+[32m+[m[32mcygwin=false;[m
+[32m+[m[32mdarwin=false;[m
+[32m+[m[32mmingw=false[m
+[32m+[m[32mcase "`uname`" in[m
+[32m+[m[32m  CYGWIN*) cygwin=true ;;[m
+[32m+[m[32m  MINGW*) mingw=true;;[m
+[32m+[m[32m  Darwin*) darwin=true[m
+[32m+[m[32m    # Use /usr/libexec/java_home if available, otherwise fall back to /Library/Java/Home[m
+[32m+[m[32m    # See https://developer.apple.com/library/mac/qa/qa1170/_index.html[m
+[32m+[m[32m    if [ -z "$JAVA_HOME" ]; then[m
+[32m+[m[32m      if [ -x "/usr/libexec/java_home" ]; then[m
+[32m+[m[32m        export JAVA_HOME="`/usr/libexec/java_home`"[m
+[32m+[m[32m      else[m
+[32m+[m[32m        export JAVA_HOME="/Library/Java/Home"[m
+[32m+[m[32m      fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ] ; then[m
+[32m+[m[32m  if [ -r /etc/gentoo-release ] ; then[m
+[32m+[m[32m    JAVA_HOME=`java-config --jre-home`[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$M2_HOME" ] ; then[m
+[32m+[m[32m  ## resolve links - $0 may be a link to maven's home[m
+[32m+[m[32m  PRG="$0"[m
+[32m+[m
+[32m+[m[32m  # need this for relative symlinks[m
+[32m+[m[32m  while [ -h "$PRG" ] ; do[m
+[32m+[m[32m    ls=`ls -ld "$PRG"`[m
+[32m+[m[32m    link=`expr "$ls" : '.*-> \(.*\)$'`[m
+[32m+[m[32m    if expr "$link" : '/.*' > /dev/null; then[m
+[32m+[m[32m      PRG="$link"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      PRG="`dirname "$PRG"`/$link"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  done[m
+[32m+[m
+[32m+[m[32m  saveddir=`pwd`[m
+[32m+[m
+[32m+[m[32m  M2_HOME=`dirname "$PRG"`/..[m
+[32m+[m
+[32m+[m[32m  # make it fully qualified[m
+[32m+[m[32m  M2_HOME=`cd "$M2_HOME" && pwd`[m
+[32m+[m
+[32m+[m[32m  cd "$saveddir"[m
+[32m+[m[32m  # echo Using m2 at $M2_HOME[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# For Cygwin, ensure paths are in UNIX format before anything is touched[m
+[32m+[m[32mif $cygwin ; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME=`cygpath --unix "$M2_HOME"`[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME=`cygpath --unix "$JAVA_HOME"`[m
+[32m+[m[32m  [ -n "$CLASSPATH" ] &&[m
+[32m+[m[32m    CLASSPATH=`cygpath --path --unix "$CLASSPATH"`[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# For Mingw, ensure paths are in UNIX format before anything is touched[m
+[32m+[m[32mif $mingw ; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME="`(cd "$M2_HOME"; pwd)`"[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME="`(cd "$JAVA_HOME"; pwd)`"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ]; then[m
+[32m+[m[32m  javaExecutable="`which javac`"[m
+[32m+[m[32m  if [ -n "$javaExecutable" ] && ! [ "`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then[m
+[32m+[m[32m    # readlink(1) is not available as standard on Solaris 10.[m
+[32m+[m[32m    readLink=`which readlink`[m
+[32m+[m[32m    if [ ! `expr "$readLink" : '\([^ ]*\)'` = "no" ]; then[m
+[32m+[m[32m      if $darwin ; then[m
+[32m+[m[32m        javaHome="`dirname \"$javaExecutable\"`"[m
+[32m+[m[32m        javaExecutable="`cd \"$javaHome\" && pwd -P`/javac"[m
+[32m+[m[32m      else[m
+[32m+[m[32m        javaExecutable="`readlink -f \"$javaExecutable\"`"[m
+[32m+[m[32m      fi[m
+[32m+[m[32m      javaHome="`dirname \"$javaExecutable\"`"[m
+[32m+[m[32m      javaHome=`expr "$javaHome" : '\(.*\)/bin'`[m
+[32m+[m[32m      JAVA_HOME="$javaHome"[m
+[32m+[m[32m      export JAVA_HOME[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVACMD" ] ; then[m
+[32m+[m[32m  if [ -n "$JAVA_HOME"  ] ; then[m
+[32m+[m[32m    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then[m
+[32m+[m[32m      # IBM's JDK on AIX uses strange locations for the executables[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/jre/sh/java"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/bin/java"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  else[m
+[32m+[m[32m    JAVACMD="`\\unset -f command; \\command -v java`"[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ ! -x "$JAVACMD" ] ; then[m
+[32m+[m[32m  echo "Error: JAVA_HOME is not defined correctly." >&2[m
+[32m+[m[32m  echo "  We cannot execute $JAVACMD" >&2[m
+[32m+[m[32m  exit 1[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ] ; then[m
+[32m+[m[32m  echo "Warning: JAVA_HOME environment variable is not set."[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mCLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher[m
+[32m+[m
+[32m+[m[32m# traverses directory structure from process work directory to filesystem root[m
+[32m+[m[32m# first directory with .mvn subdirectory is considered project base directory[m
+[32m+[m[32mfind_maven_basedir() {[m
+[32m+[m
+[32m+[m[32m  if [ -z "$1" ][m
+[32m+[m[32m  then[m
+[32m+[m[32m    echo "Path not specified to find_maven_basedir"[m
+[32m+[m[32m    return 1[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  basedir="$1"[m
+[32m+[m[32m  wdir="$1"[m
+[32m+[m[32m  while [ "$wdir" != '/' ] ; do[m
+[32m+[m[32m    if [ -d "$wdir"/.mvn ] ; then[m
+[32m+[m[32m      basedir=$wdir[m
+[32m+[m[32m      break[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    # workaround for JBEAP-8937 (on Solaris 10/Sparc)[m
+[32m+[m[32m    if [ -d "${wdir}" ]; then[m
+[32m+[m[32m      wdir=`cd "$wdir/.."; pwd`[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    # end of workaround[m
+[32m+[m[32m  done[m
+[32m+[m[32m  echo "${basedir}"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# concatenates all lines of a file[m
+[32m+[m[32mconcat_lines() {[m
+[32m+[m[32m  if [ -f "$1" ]; then[m
+[32m+[m[32m    echo "$(tr -s '\n' ' ' < "$1")"[m
+[32m+[m[32m  fi[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mBASE_DIR=`find_maven_basedir "$(pwd)"`[m
+[32m+[m[32mif [ -z "$BASE_DIR" ]; then[m
+[32m+[m[32m  exit 1;[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32m# Extension to allow automatically downloading the maven-wrapper.jar from Maven-central[m
+[32m+[m[32m# This allows using the maven wrapper in projects that prohibit checking in binary data.[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32mif [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Found .mvn/wrapper/maven-wrapper.jar"[m
+[32m+[m[32m    fi[m
+[32m+[m[32melse[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    if [ -n "$MVNW_REPOURL" ]; then[m
+[32m+[m[32m      jarUrl="$MVNW_REPOURL/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      jarUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    while IFS="=" read key value; do[m
+[32m+[m[32m      case "$key" in (wrapperUrl) jarUrl="$value"; break ;;[m
+[32m+[m[32m      esac[m
+[32m+[m[32m    done < "$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Downloading from: $jarUrl"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    wrapperJarPath="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"[m
+[32m+[m[32m    if $cygwin; then[m
+[32m+[m[32m      wrapperJarPath=`cygpath --path --windows "$wrapperJarPath"`[m
+[32m+[m[32m    fi[m
+[32m+[m
+[32m+[m[32m    if command -v wget > /dev/null; then[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Found wget ... using wget"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then[m
+[32m+[m[32m            wget "$jarUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"[m
+[32m+[m[32m        else[m
+[32m+[m[32m            wget --http-user=$MVNW_USERNAME --http-password=$MVNW_PASSWORD "$jarUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m    elif command -v curl > /dev/null; then[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Found curl ... using curl"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then[m
+[32m+[m[32m            curl -o "$wrapperJarPath" "$jarUrl" -f[m
+[32m+[m[32m        else[m
+[32m+[m[32m            curl --user $MVNW_USERNAME:$MVNW_PASSWORD -o "$wrapperJarPath" "$jarUrl" -f[m
+[32m+[m[32m        fi[m
+[32m+[m
+[32m+[m[32m    else[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Falling back to using Java to download"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        javaClass="$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.java"[m
+[32m+[m[32m        # For Cygwin, switch paths to Windows format before running javac[m
+[32m+[m[32m        if $cygwin; then[m
+[32m+[m[32m          javaClass=`cygpath --path --windows "$javaClass"`[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -e "$javaClass" ]; then[m
+[32m+[m[32m            if [ ! -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then[m
+[32m+[m[32m                if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m                  echo " - Compiling MavenWrapperDownloader.java ..."[m
+[32m+[m[32m                fi[m
+[32m+[m[32m                # Compiling the Java class[m
+[32m+[m[32m                ("$JAVA_HOME/bin/javac" "$javaClass")[m
+[32m+[m[32m            fi[m
+[32m+[m[32m            if [ -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then[m
+[32m+[m[32m                # Running the downloader[m
+[32m+[m[32m                if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m                  echo " - Running MavenWrapperDownloader.java ..."[m
+[32m+[m[32m                fi[m
+[32m+[m[32m                ("$JAVA_HOME/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")[m
+[32m+[m[32m            fi[m
+[32m+[m[32m        fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32mfi[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32m# End of extension[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m
+[32m+[m[32mexport MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-"$BASE_DIR"}[m
+[32m+[m[32mif [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m  echo $MAVEN_PROJECTBASEDIR[m
+[32m+[m[32mfi[m
+[32m+[m[32mMAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"[m
+[32m+[m
+[32m+[m[32m# For Cygwin, switch paths to Windows format before running java[m
+[32m+[m[32mif $cygwin; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME=`cygpath --path --windows "$M2_HOME"`[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`[m
+[32m+[m[32m  [ -n "$CLASSPATH" ] &&[m
+[32m+[m[32m    CLASSPATH=`cygpath --path --windows "$CLASSPATH"`[m
+[32m+[m[32m  [ -n "$MAVEN_PROJECTBASEDIR" ] &&[m
+[32m+[m[32m    MAVEN_PROJECTBASEDIR=`cygpath --path --windows "$MAVEN_PROJECTBASEDIR"`[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# Provide a "standardized" way to retrieve the CLI args that will[m
+[32m+[m[32m# work with both Windows and non-Windows executions.[m
+[32m+[m[32mMAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"[m
+[32m+[m[32mexport MAVEN_CMD_LINE_ARGS[m
+[32m+[m
+[32m+[m[32mWRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain[m
+[32m+[m
+[32m+[m[32mexec "$JAVACMD" \[m
+[32m+[m[32m  $MAVEN_OPTS \[m
+[32m+[m[32m  $MAVEN_DEBUG_OPTS \[m
+[32m+[m[32m  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \[m
+[32m+[m[32m  "-Dmaven.home=${M2_HOME}" \[m
+[32m+[m[32m  "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \[m
+[32m+[m[32m  ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/mvnw.cmd b/FinalBackEndProgramOnExamPortal/mvnw.cmd[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1d8ab01[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/mvnw.cmd[m
+[36m@@ -0,0 +1,188 @@[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m@REM or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m@REM distributed with this work for additional information[m
+[32m+[m[32m@REM regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m@REM to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m@REM "License"); you may not use this file except in compliance[m
+[32m+[m[32m@REM with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM    https://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m@REM software distributed under the License is distributed on an[m
+[32m+[m[32m@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m@REM KIND, either express or implied.  See the License for the[m
+[32m+[m[32m@REM specific language governing permissions and limitations[m
+[32m+[m[32m@REM under the License.[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Maven Start Up Batch script[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Required ENV vars:[m
+[32m+[m[32m@REM JAVA_HOME - location of a JDK home dir[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Optional ENV vars[m
+[32m+[m[32m@REM M2_HOME - location of maven2's installed home dir[m
+[32m+[m[32m@REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands[m
+[32m+[m[32m@REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending[m
+[32m+[m[32m@REM MAVEN_OPTS - parameters passed to the Java VM when running Maven[m
+[32m+[m[32m@REM     e.g. to debug Maven itself, use[m
+[32m+[m[32m@REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000[m
+[32m+[m[32m@REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'[m
+[32m+[m[32m@echo off[m
+[32m+[m[32m@REM set title of command window[m
+[32m+[m[32mtitle %0[m
+[32m+[m[32m@REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'[m
+[32m+[m[32m@if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%[m
+[32m+[m
+[32m+[m[32m@REM set %HOME% to equivalent of $HOME[m
+[32m+[m[32mif "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")[m
+[32m+[m
+[32m+[m[32m@REM Execute a user defined script before this one[m
+[32m+[m[32mif not "%MAVEN_SKIP_RC%" == "" goto skipRcPre[m
+[32m+[m[32m@REM check for pre script, once with legacy .bat ending and once with .cmd ending[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_pre.bat" call "%USERPROFILE%\mavenrc_pre.bat" %*[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*[m
+[32m+[m[32m:skipRcPre[m
+[32m+[m
+[32m+[m[32m@setlocal[m
+[32m+[m
+[32m+[m[32mset ERROR_CODE=0[m
+[32m+[m
+[32m+[m[32m@REM To isolate internal variables from possible post scripts, we use another setlocal[m
+[32m+[m[32m@setlocal[m
+[32m+[m
+[32m+[m[32m@REM ==== START VALIDATION ====[m
+[32m+[m[32mif not "%JAVA_HOME%" == "" goto OkJHome[m
+[32m+[m
+[32m+[m[32mecho.[m
+[32m+[m[32mecho Error: JAVA_HOME not found in your environment. >&2[m
+[32m+[m[32mecho Please set the JAVA_HOME variable in your environment to match the >&2[m
+[32m+[m[32mecho location of your Java installation. >&2[m
+[32m+[m[32mecho.[m
+[32m+[m[32mgoto error[m
+[32m+[m
+[32m+[m[32m:OkJHome[m
+[32m+[m[32mif exist "%JAVA_HOME%\bin\java.exe" goto init[m
+[32m+[m
+[32m+[m[32mecho.[m
+[32m+[m[32mecho Error: JAVA_HOME is set to an invalid directory. >&2[m
+[32m+[m[32mecho JAVA_HOME = "%JAVA_HOME%" >&2[m
+[32m+[m[32mecho Please set the JAVA_HOME variable in your environment to match the >&2[m
+[32m+[m[32mecho location of your Java installation. >&2[m
+[32m+[m[32mecho.[m
+[32m+[m[32mgoto error[m
+[32m+[m
+[32m+[m[32m@REM ==== END VALIDATION ====[m
+[32m+[m
+[32m+[m[32m:init[m
+[32m+[m
+[32m+[m[32m@REM Find the project base dir, i.e. the directory that contains the folder ".mvn".[m
+[32m+[m[32m@REM Fallback to current working directory if not found.[m
+[32m+[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%[m
+[32m+[m[32mIF NOT "%MAVEN_PROJECTBASEDIR%"=="" goto endDetectBaseDir[m
+[32m+[m
+[32m+[m[32mset EXEC_DIR=%CD%[m
+[32m+[m[32mset WDIR=%EXEC_DIR%[m
+[32m+[m[32m:findBaseDir[m
+[32m+[m[32mIF EXIST "%WDIR%"\.mvn goto baseDirFound[m
+[32m+[m[32mcd ..[m
+[32m+[m[32mIF "%WDIR%"=="%CD%" goto baseDirNotFound[m
+[32m+[m[32mset WDIR=%CD%[m
+[32m+[m[32mgoto findBaseDir[m
+[32m+[m
+[32m+[m[32m:baseDirFound[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%WDIR%[m
+[32m+[m[32mcd "%EXEC_DIR%"[m
+[32m+[m[32mgoto endDetectBaseDir[m
+[32m+[m
+[32m+[m[32m:baseDirNotFound[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%EXEC_DIR%[m
+[32m+[m[32mcd "%EXEC_DIR%"[m
+[32m+[m
+[32m+[m[32m:endDetectBaseDir[m
+[32m+[m
+[32m+[m[32mIF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig[m
+[32m+[m
+[32m+[m[32m@setlocal EnableExtensions EnableDelayedExpansion[m
+[32m+[m[32mfor /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a[m
+[32m+[m[32m@endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%[m
+[32m+[m
+[32m+[m[32m:endReadAdditionalConfig[m
+[32m+[m
+[32m+[m[32mSET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"[m
+[32m+[m[32mset WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"[m
+[32m+[m[32mset WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain[m
+[32m+[m
+[32m+[m[32mset DOWNLOAD_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m
+[32m+[m[32mFOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO ([m
+[32m+[m[32m    IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32m@REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central[m
+[32m+[m[32m@REM This allows using the maven wrapper in projects that prohibit checking in binary data.[m
+[32m+[m[32mif exist %WRAPPER_JAR% ([m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Found %WRAPPER_JAR%[m
+[32m+[m[32m    )[m
+[32m+[m[32m) else ([m
+[32m+[m[32m    if not "%MVNW_REPOURL%" == "" ([m
+[32m+[m[32m        SET DOWNLOAD_URL="%MVNW_REPOURL%/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    )[m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Couldn't find %WRAPPER_JAR%, downloading it ...[m
+[32m+[m[32m        echo Downloading from: %DOWNLOAD_URL%[m
+[32m+[m[32m    )[m
+[32m+[m
+[32m+[m[32m    powershell -Command "&{"^[m
+[32m+[m		[32m"$webclient = new-object System.Net.WebClient;"^[m
+[32m+[m		[32m"if (-not ([string]::IsNullOrEmpty('%MVNW_USERNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^[m
+[32m+[m		[32m"$webclient.Credentials = new-object System.Net.NetworkCredential('%MVNW_USERNAME%', '%MVNW_PASSWORD%');"^[m
+[32m+[m		[32m"}"^[m
+[32m+[m		[32m"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webclient.DownloadFile('%DOWNLOAD_URL%', '%WRAPPER_JAR%')"^[m
+[32m+[m		[32m"}"[m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Finished downloading %WRAPPER_JAR%[m
+[32m+[m[32m    )[m
+[32m+[m[32m)[m
+[32m+[m[32m@REM End of extension[m
+[32m+[m
+[32m+[m[32m@REM Provide a "standardized" way to retrieve the CLI args that will[m
+[32m+[m[32m@REM work with both Windows and non-Windows executions.[m
+[32m+[m[32mset MAVEN_CMD_LINE_ARGS=%*[m
+[32m+[m
+[32m+[m[32m%MAVEN_JAVA_EXE% ^[m
+[32m+[m[32m  %JVM_CONFIG_MAVEN_PROPS% ^[m
+[32m+[m[32m  %MAVEN_OPTS% ^[m
+[32m+[m[32m  %MAVEN_DEBUG_OPTS% ^[m
+[32m+[m[32m  -classpath %WRAPPER_JAR% ^[m
+[32m+[m[32m  "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" ^[m
+[32m+[m[32m  %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*[m
+[32m+[m[32mif ERRORLEVEL 1 goto error[m
+[32m+[m[32mgoto end[m
+[32m+[m
+[32m+[m[32m:error[m
+[32m+[m[32mset ERROR_CODE=1[m
+[32m+[m
+[32m+[m[32m:end[m
+[32m+[m[32m@endlocal & set ERROR_CODE=%ERROR_CODE%[m
+[32m+[m
+[32m+[m[32mif not "%MAVEN_SKIP_RC%"=="" goto skipRcPost[m
+[32m+[m[32m@REM check for post script, once with legacy .bat ending and once with .cmd ending[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_post.bat" call "%USERPROFILE%\mavenrc_post.bat"[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_post.cmd" call "%USERPROFILE%\mavenrc_post.cmd"[m
+[32m+[m[32m:skipRcPost[m
+[32m+[m
+[32m+[m[32m@REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'[m
+[32m+[m[32mif "%MAVEN_BATCH_PAUSE%"=="on" pause[m
+[32m+[m
+[32m+[m[32mif "%MAVEN_TERMINATE_CMD%"=="on" exit %ERROR_CODE%[m
+[32m+[m
+[32m+[m[32mcmd /C exit /B %ERROR_CODE%[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/pom.xml b/FinalBackEndProgramOnExamPortal/pom.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..18ea5dc[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/pom.xml[m
+[36m@@ -0,0 +1,71 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m	[32mxsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">[m
+[32m+[m	[32m<modelVersion>4.0.0</modelVersion>[m
+[32m+[m	[32m<parent>[m
+[32m+[m		[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m		[32m<artifactId>spring-boot-starter-parent</artifactId>[m
+[32m+[m		[32m<version>2.6.8</version>[m
+[32m+[m		[32m<relativePath/> <!-- lookup parent from repository -->[m
+[32m+[m	[32m</parent>[m
+[32m+[m	[32m<groupId>com.exam</groupId>[m
+[32m+[m	[32m<artifactId>examserver</artifactId>[m
+[32m+[m	[32m<version>0.0.1-SNAPSHOT</version>[m
+[32m+[m	[32m<name>FinalBackEndProgramOnExamPortal</name>[m
+[32m+[m	[32m<description>backend code for exam portal</description>[m
+[32m+[m	[32m<properties>[m
+[32m+[m		[32m<java.version>1.8</java.version>[m
+[32m+[m	[32m</properties>[m
+[32m+[m	[32m<dependencies>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-data-jpa</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-web</artifactId>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->[m
+[32m+[m[32m     <dependency>[m
+[32m+[m[32m           <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m           <artifactId>spring-boot-starter-security</artifactId>[m
+[32m+[m[41m    [m
+[32m+[m[32m     </dependency>[m
+[32m+[m[41m     [m
+[32m+[m[32m     <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->[m
+[32m+[m[32m     <dependency>[m
+[32m+[m[32m          <groupId>io.jsonwebtoken</groupId>[m
+[32m+[m[32m          <artifactId>jjwt</artifactId>[m
+[32m+[m[32m          <version>0.9.1</version>[m
+[32m+[m[32m     </dependency>[m
+[32m+[m
+[32m+[m[32m     <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->[m
+[32m+[m[32m     <dependency>[m
+[32m+[m[32m          <groupId>javax.xml.bind</groupId>[m
+[32m+[m[32m          <artifactId>jaxb-api</artifactId>[m
+[32m+[m[32m          <version>2.3.1</version>[m
+[32m+[m[32m     </dependency>[m
+[32m+[m[41m		[m
+[32m+[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>mysql</groupId>[m
+[32m+[m			[32m<artifactId>mysql-connector-java</artifactId>[m
+[32m+[m			[32m<scope>runtime</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m		[32m<dependency>[m
+[32m+[m			[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m			[32m<artifactId>spring-boot-starter-test</artifactId>[m
+[32m+[m			[32m<scope>test</scope>[m
+[32m+[m		[32m</dependency>[m
+[32m+[m	[32m</dependencies>[m
+[32m+[m
+[32m+[m	[32m<build>[m
+[32m+[m		[32m<plugins>[m
+[32m+[m			[32m<plugin>[m
+[32m+[m				[32m<groupId>org.springframework.boot</groupId>[m
+[32m+[m				[32m<artifactId>spring-boot-maven-plugin</artifactId>[m
+[32m+[m			[32m</plugin>[m
+[32m+[m		[32m</plugins>[m
+[32m+[m	[32m</build>[m
+[32m+[m
+[32m+[m[32m</project>[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/FinalExamserverApplication.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/FinalExamserverApplication.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4e5bbae[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/FinalExamserverApplication.java[m
+[36m@@ -0,0 +1,59 @@[m
+[32m+[m[32mpackage com.exam;[m
+[32m+[m
+[32m+[m[32mimport java.util.HashSet;[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.boot.CommandLineRunner;[m
+[32m+[m[32mimport org.springframework.boot.SpringApplication;[m
+[32m+[m[32mimport org.springframework.boot.autoconfigure.SpringBootApplication;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.Role;[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m[32mimport com.exam.model.UserRole;[m
+[32m+[m[32mimport com.exam.service.UserService;[m
+[32m+[m
+[32m+[m[32m@SpringBootApplication[m
+[32m+[m[32mpublic class FinalExamserverApplication implements CommandLineRunner {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserService userService;[m
+[32m+[m
+[32m+[m	[32mpublic static void main(String[] args) {[m
+[32m+[m		[32mSpringApplication.run(FinalExamserverApplication.class, args);[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic void run(String... args) throws Exception {[m
+[32m+[m		[32mSystem.out.println("Started code !!");[m
+[32m+[m[41m		[m
+[32m+[m[32m//		User user = new User();[m
+[32m+[m[32m//[m[41m		[m
+[32m+[m[32m//		user.setFirstName("Gaurav");[m
+[32m+[m[32m//		user.setLastName("Solapure");[m
+[32m+[m[32m//		user.setUsername("gaurav1105");[m
+[32m+[m[32m//		user.setPassword("qwerty");[m
+[32m+[m[32m//		user.setEmail("abc@gmail.com");[m
+[32m+[m[32m//		user.setProfile("default.png");[m
+[32m+[m[32m//[m[41m		[m
+[32m+[m[32m//		Role role1 = new Role();[m
+[32m+[m[32m//		role1.setRoleId(44L);[m
+[32m+[m[32m//		role1.setRoleName("ADMIN");[m
+[32m+[m[32m//[m[41m		[m
+[32m+[m[32m//		Set<UserRole> userRoleSet = new HashSet<>();[m
+[32m+[m[32m//		UserRole userRole = new UserRole();[m
+[32m+[m[32m//		userRole.setRole(role1);[m
+[32m+[m[32m//		userRole.setUser(user);[m
+[32m+[m[32m//[m[41m		[m
+[32m+[m[32m//		userRoleSet.add(userRole);[m
+[32m+[m[32m//[m[41m		[m
+[32m+[m[32m//		User user1 = this.userService.createUser(user, userRoleSet);[m
+[32m+[m[32m//		System.out.println(user1.getUsername());[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationEntryPoint.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationEntryPoint.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5130031[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationEntryPoint.java[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32mpackage com.exam.config;[m
+[32m+[m
+[32m+[m[32mimport java.io.IOException;[m
+[32m+[m
+[32m+[m[32mimport javax.servlet.ServletException;[m
+[32m+[m[32mimport javax.servlet.http.HttpServletRequest;[m
+[32m+[m[32mimport javax.servlet.http.HttpServletResponse;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.security.core.AuthenticationException;[m
+[32m+[m[32mimport org.springframework.security.web.AuthenticationEntryPoint;[m
+[32m+[m[32mimport org.springframework.stereotype.Component;[m
+[32m+[m[32m@Component[m
+[32m+[m[32mpublic class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic void commence(HttpServletRequest request, HttpServletResponse response,[m
+[32m+[m			[32mAuthenticationException authException) throws IOException, ServletException {[m
+[32m+[m[41m		[m
+[32m+[m		[32mresponse.sendError(401, "Unauthorized");[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationFilter.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationFilter.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2117721[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtAuthenticationFilter.java[m
+[36m@@ -0,0 +1,85 @@[m
+[32m+[m[32mpackage com.exam.config;[m
+[32m+[m
+[32m+[m[32mimport java.io.IOException;[m
+[32m+[m
+[32m+[m[32mimport javax.servlet.FilterChain;[m
+[32m+[m[32mimport javax.servlet.ServletException;[m
+[32m+[m[32mimport javax.servlet.http.HttpServletRequest;[m
+[32m+[m[32mimport javax.servlet.http.HttpServletResponse;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;[m
+[32m+[m[32mimport org.springframework.security.core.context.SecurityContextHolder;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.security.web.authentication.WebAuthenticationDetailsSource;[m
+[32m+[m[32mimport org.springframework.stereotype.Component;[m
+[32m+[m[32mimport org.springframework.web.filter.OncePerRequestFilter;[m
+[32m+[m
+[32m+[m[32mimport com.exam.service.impl.UserDetailsServiceImpl;[m
+[32m+[m
+[32m+[m[32mimport io.jsonwebtoken.ExpiredJwtException;[m
+[32m+[m[32m@Component[m
+[32m+[m[32mpublic class JwtAuthenticationFilter extends OncePerRequestFilter {[m
+[32m+[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserDetailsServiceImpl userDetailsService;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate JwtUtils jwtUtil;[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mprotected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)[m
+[32m+[m			[32mthrows ServletException, IOException {[m
+[32m+[m[41m		[m
+[32m+[m		[32mfinal String requestTokenHeader = request.getHeader("Authorization");[m
+[32m+[m		[32mSystem.out.println(requestTokenHeader);[m
+[32m+[m		[32mString username=null;[m
+[32m+[m		[32mString jwtTokan=null;[m
+[32m+[m[41m		[m
+[32m+[m		[32mif(requestTokenHeader!=null && requestTokenHeader.startsWith("Bearer ")) {[m
+[32m+[m[41m			[m
+[32m+[m			[32m//yes[m
+[32m+[m[41m			[m
+[32m+[m			[32mjwtTokan = requestTokenHeader.substring(7);[m
+[32m+[m[41m			[m
+[32m+[m			[32mtry {[m
+[32m+[m[41m			[m
+[32m+[m			[32musername = this.jwtUtil.extractUsername(jwtTokan);[m
+[32m+[m[41m			[m
+[32m+[m			[32m}catch (ExpiredJwtException e) {[m
+[32m+[m[41m				[m
+[32m+[m				[32me.printStackTrace();[m
+[32m+[m				[32mSystem.out.println("Jwt token has expired");[m
+[32m+[m[41m				[m
+[32m+[m			[32m}catch (Exception e) {[m
+[32m+[m[41m				[m
+[32m+[m				[32me.printStackTrace();[m
+[32m+[m				[32mSystem.out.println("error");[m
+[32m+[m			[32m}[m
+[32m+[m[41m			[m
+[32m+[m		[32m}else {[m
+[32m+[m			[32mSystem.out.println("Invalis token, not start with bearer string");[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m		[32m//validation token[m
+[32m+[m		[32mif(username!=null && SecurityContextHolder.getContext().getAuthentication()==null) {[m
+[32m+[m[41m			[m
+[32m+[m			[32mfinal UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);[m
+[32m+[m[41m			[m
+[32m+[m			[32mif(this.jwtUtil.validateToken(jwtTokan, userDetails)) {[m
+[32m+[m[41m				[m
+[32m+[m				[32m//token is valid[m
+[32m+[m				[32mUsernamePasswordAuthenticationToken usernamePasswordAuthentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());[m
+[32m+[m				[32musernamePasswordAuthentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));[m
+[32m+[m[41m				[m
+[32m+[m				[32mSecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthentication);[m
+[32m+[m			[32m}[m
+[32m+[m		[32m}else {[m
+[32m+[m[41m			[m
+[32m+[m			[32mSystem.out.println("Token is not valid");[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m		[32mfilterChain.doFilter(request, response);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtUtils.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtUtils.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0699c13[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/JwtUtils.java[m
+[36m@@ -0,0 +1,56 @@[m
+[32m+[m[32mpackage com.exam.config;[m
+[32m+[m
+[32m+[m[32mimport java.util.Date;[m
+[32m+[m[32mimport java.util.HashMap;[m
+[32m+[m[32mimport java.util.Map;[m
+[32m+[m[32mimport java.util.function.Function;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.stereotype.Component;[m
+[32m+[m
+[32m+[m[32mimport io.jsonwebtoken.Claims;[m
+[32m+[m[32mimport io.jsonwebtoken.Jwts;[m
+[32m+[m[32mimport io.jsonwebtoken.SignatureAlgorithm;[m
+[32m+[m[32m@Component[m
+[32m+[m[32mpublic class JwtUtils {[m
+[32m+[m[41m	[m
+[32m+[m	[32mprivate String SECRET_KEY = "examportal";[m
+[32m+[m
+[32m+[m[32m    public String extractUsername(String token) {[m
+[32m+[m[32m        return extractClaim(token, Claims::getSubject);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public Date extractExpiration(String token) {[m
+[32m+[m[32m        return extractClaim(token, Claims::getExpiration);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {[m
+[32m+[m[32m        final Claims claims = extractAllClaims(token);[m
+[32m+[m[32m        return claimsResolver.apply(claims);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    private Claims extractAllClaims(String token) {[m
+[32m+[m[32m        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    private Boolean isTokenExpired(String token) {[m
+[32m+[m[32m        return extractExpiration(token).before(new Date());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String generateToken(UserDetails userDetails) {[m
+[32m+[m[32m        Map<String, Object> claims = new HashMap<>();[m
+[32m+[m[32m        return createToken(claims, userDetails.getUsername());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    private String createToken(Map<String, Object> claims, String subject) {[m
+[32m+[m
+[32m+[m[32m        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))[m
+[32m+[m[32m                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))[m
+[32m+[m[32m                .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public Boolean validateToken(String token, UserDetails userDetails) {[m
+[32m+[m[32m        final String username = extractUsername(token);[m
+[32m+[m[32m        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/MySecurityConfig.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/MySecurityConfig.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cc6dc55[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/config/MySecurityConfig.java[m
+[36m@@ -0,0 +1,78 @@[m
+[32m+[m[32mpackage com.exam.config;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.context.annotation.Bean;[m
+[32m+[m[32mimport org.springframework.context.annotation.Configuration;[m
+[32m+[m[32mimport org.springframework.http.HttpMethod;[m
+[32m+[m[32mimport org.springframework.security.authentication.AuthenticationManager;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.builders.HttpSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;[m
+[32m+[m[32mimport org.springframework.security.config.http.SessionCreationPolicy;[m
+[32m+[m[32mimport org.springframework.security.crypto.password.NoOpPasswordEncoder;[m
+[32m+[m[32mimport org.springframework.security.crypto.password.PasswordEncoder;[m
+[32m+[m[32mimport org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;[m
+[32m+[m
+[32m+[m[32mimport com.exam.service.impl.UserDetailsServiceImpl;[m
+[32m+[m
+[32m+[m[32m@EnableWebSecurity[m
+[32m+[m[32m@Configuration[m
+[32m+[m[32m@EnableGlobalMethodSecurity(prePostEnabled = true)[m
+[32m+[m[32mpublic class MySecurityConfig extends WebSecurityConfigurerAdapter {[m
+[32m+[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate JwtAuthenticationFilter jwtAuthenticationFilter;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate JwtAuthenticationEntryPoint entryPoint;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserDetailsServiceImpl userDetailsServiceImpl;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32m@Bean[m
+[32m+[m	[32mpublic AuthenticationManager authenticationManagerBean() throws Exception {[m
+[32m+[m		[32mreturn super.authenticationManagerBean();[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Bean[m
+[32m+[m	[32mpublic PasswordEncoder passwordEncoder() {[m
+[32m+[m		[32mreturn NoOpPasswordEncoder.getInstance();[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mprotected void configure(AuthenticationManagerBuilder auth) throws Exception {[m
+[32m+[m		[32mauth.userDetailsService(this.userDetailsServiceImpl).passwordEncoder(passwordEncoder());[m[41m				[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mprotected void configure(HttpSecurity http) throws Exception {[m
+[32m+[m[41m		[m
+[32m+[m		[32mhttp[m[41m [m
+[32m+[m		[32m        .csrf()[m
+[32m+[m		[32m        .disable()[m
+[32m+[m		[32m        .cors()[m
+[32m+[m		[32m        .disable()[m
+[32m+[m		[32m        .authorizeRequests()[m
+[32m+[m		[32m        .antMatchers("/generate-token", "/user/").permitAll()[m
+[32m+[m		[32m        .antMatchers(HttpMethod.OPTIONS).permitAll()[m
+[32m+[m		[32m        .anyRequest().authenticated()[m
+[32m+[m		[32m        .and()[m
+[32m+[m		[32m        .exceptionHandling().authenticationEntryPoint(entryPoint)[m
+[32m+[m		[32m        .and()[m
+[32m+[m		[32m        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);[m
+[32m+[m[41m		        [m
+[32m+[m[41m		        [m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32mhttp.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);[m
+[32m+[m[41m		        [m
+[32m+[m[41m		     [m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/AuthenticateController.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/AuthenticateController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9965711[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/AuthenticateController.java[m
+[36m@@ -0,0 +1,104 @@[m
+[32m+[m[32mpackage com.exam.controller;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.security.authentication.AuthenticationManager;[m
+[32m+[m[32mimport org.springframework.security.authentication.BadCredentialsException;[m
+[32m+[m[32mimport org.springframework.security.authentication.DisabledException;[m
+[32m+[m[32mimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;[m
+[32m+[m[32mimport org.springframework.security.core.Authentication;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UsernameNotFoundException;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.ControllerAdvice;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PostMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestBody;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RestController;[m
+[32m+[m
+[32m+[m[32mimport com.exam.config.JwtUtils;[m
+[32m+[m[32mimport com.exam.model.JwtRequest;[m
+[32m+[m[32mimport com.exam.model.JwtResponse;[m
+[32m+[m[32mimport com.exam.service.impl.UserDetailsServiceImpl;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@ControllerAdvice[m
+[32m+[m[32mpublic class AuthenticateController {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate AuthenticationManager authenticationManager;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserDetailsServiceImpl userDetailsService;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate JwtUtils jwtUtils;[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32m//generate token[m
+[32m+[m	[32m@PostMapping("/generate-token")[m
+[32m+[m	[32mpublic ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) throws Exception {[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32mtry {[m[41m [m
+[32m+[m[41m			[m
+[32m+[m			[32mauthenticate(jwtRequest.getUsername(), jwtRequest.getPassword());[m
+[32m+[m[41m			[m
+[32m+[m		[32m}catch (UsernameNotFoundException e) {[m
+[32m+[m			[32me.printStackTrace();[m
+[32m+[m			[32m//throw new Exception("User not found ");[m
+[32m+[m			[32mreturn ResponseEntity.status(HttpStatus.NOT_FOUND).build();[m
+[32m+[m[41m			[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m		[32m/////authenticate[m
+[32m+[m[41m		[m
+[32m+[m		[32mUserDetails userDetails = this.userDetailsService.loadUserByUsername(jwtRequest.getUsername());[m
+[32m+[m		[32mString token = this.jwtUtils.generateToken(userDetails);[m
+[32m+[m		[32mreturn ResponseEntity.ok(new JwtResponse(token));[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32mprivate ResponseEntity<Object> authenticate(String username, String password) throws Exception {[m
+[32m+[m[41m		[m
+[32m+[m		[32mAuthentication token = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));[m
+[32m+[m[41m	[m
+[32m+[m		[32mif(token == null) {[m
+[32m+[m[41m			 [m
+[32m+[m		[32m}[m
+[32m+[m		[32m//return (ResponseEntity<Object>)token;[m[41m [m
+[32m+[m		[32mreturn ResponseEntity.status(HttpStatus.NOT_FOUND).build();[m
+[32m+[m[41m		[m
+[32m+[m[32m//		try {[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//		}catch (DisabledException e) {[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//			throw new Exception("USER DISABLED "+e.getMessage());[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//		}catch (BadCredentialsException e) {[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//			throw new Exception("Invalid Credentials "+e.getMessage());[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m[32m//[m[41m			[m
+[32m+[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m//private ResponseEntity<?> authenticate(String username, String password) throws Exception {[m
+[32m+[m[32m//[m[41m	[m
+[32m+[m[32m//	Authentication token = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));[m
+[32m+[m[32m//	if (token == null) {[m
+[32m+[m[32m//		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();[m
+[32m+[m[32m//	}[m
+[32m+[m[32m//	return (ResponseEntity<?>)token;[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/UserController.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/UserController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..009ba83[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/controller/UserController.java[m
+[36m@@ -0,0 +1,70 @@[m
+[32m+[m[32mpackage com.exam.controller;[m
+[32m+[m
+[32m+[m[32mimport java.util.HashSet;[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.DeleteMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.GetMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PathVariable;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PostMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PutMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestBody;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RestController;[m
+[32m+[m[32mimport com.exam.model.Role;[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m[32mimport com.exam.model.UserRole;[m
+[32m+[m[32mimport com.exam.service.UserService;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/user")[m
+[32m+[m[32mpublic class UserController {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserService userService;[m
+[32m+[m[41m	[m
+[32m+[m	[32m//creating user[m
+[32m+[m	[32m@PostMapping("/")[m
+[32m+[m	[32mpublic User createUser(@RequestBody User user) throws Exception {[m
+[32m+[m[41m		[m
+[32m+[m		[32mSet<UserRole> roles = new HashSet<>();[m
+[32m+[m[41m		[m
+[32m+[m		[32mRole role = new Role();[m
+[32m+[m		[32mrole.setRoleId(45L);[m
+[32m+[m		[32mrole.setRoleName("NORMAL");[m
+[32m+[m[41m		[m
+[32m+[m		[32mUserRole userRole = new UserRole();[m
+[32m+[m		[32muserRole.setUser(user);[m
+[32m+[m		[32muserRole.setRole(role);[m
+[32m+[m[41m		[m
+[32m+[m		[32mroles.add(userRole);[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn this.userService.createUser(user, roles);[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32m//get user by username[m
+[32m+[m	[32m@GetMapping("/{username}")[m
+[32m+[m	[32mpublic User getUser(@PathVariable("username") String username) {[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn this.userService.getUser(username);[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32m//delete user by id[m
+[32m+[m	[32m@DeleteMapping("/{userId}")[m
+[32m+[m	[32mpublic void deleteUser(@PathVariable("userId") Long userId) {[m
+[32m+[m		[32mthis.userService.deleteUser(userId);[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Authority.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Authority.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..46d2bf1[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Authority.java[m
+[36m@@ -0,0 +1,24 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.security.core.GrantedAuthority;[m
+[32m+[m
+[32m+[m[32mpublic class Authority implements GrantedAuthority {[m
+[32m+[m[41m	[m
+[32m+[m	[32mprivate String authority;[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m	[32mpublic Authority(String authority) {[m
+[32m+[m		[32msuper();[m
+[32m+[m		[32mthis.authority = authority;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic String getAuthority() {[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn this.authority;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtRequest.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtRequest.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f7bedb5[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtRequest.java[m
+[36m@@ -0,0 +1,42 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mpublic class JwtRequest {[m
+[32m+[m[41m	[m
+[32m+[m	[32mString username;[m
+[32m+[m	[32mString password;[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32mpublic JwtRequest() {[m
+[32m+[m		[32m// TODO Auto-generated constructor stub[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic JwtRequest(String username, String password) {[m
+[32m+[m		[32msuper();[m
+[32m+[m		[32mthis.username = username;[m
+[32m+[m		[32mthis.password = password;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic String getUsername() {[m
+[32m+[m		[32mreturn username;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic void setUsername(String username) {[m
+[32m+[m		[32mthis.username = username;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic String getPassword() {[m
+[32m+[m		[32mreturn password;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic void setPassword(String password) {[m
+[32m+[m		[32mthis.password = password;[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtResponse.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtResponse.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ffa0d2d[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/JwtResponse.java[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mpublic class JwtResponse {[m
+[32m+[m[41m	[m
+[32m+[m	[32mString token;[m
+[32m+[m[41m	[m
+[32m+[m	[32mpublic JwtResponse() {[m
+[32m+[m		[32m// TODO Auto-generated constructor stub[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic JwtResponse(String token) {[m
+[32m+[m		[32msuper();[m
+[32m+[m		[32mthis.token = token;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getToken() {[m
+[32m+[m		[32mreturn token;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setToken(String token) {[m
+[32m+[m		[32mthis.token = token;[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Role.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Role.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a3df848[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/Role.java[m
+[36m@@ -0,0 +1,65 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mimport java.util.HashSet;[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.CascadeType;[m
+[32m+[m[32mimport javax.persistence.Entity;[m
+[32m+[m[32mimport javax.persistence.FetchType;[m
+[32m+[m[32mimport javax.persistence.Id;[m
+[32m+[m[32mimport javax.persistence.OneToMany;[m
+[32m+[m[32mimport javax.persistence.Table;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Table(name = "roles")[m
+[32m+[m[32mpublic class Role {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Id[m
+[32m+[m	[32mprivate Long roleId;[m
+[32m+[m	[32mprivate String roleName;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "role")[m
+[32m+[m	[32mprivate Set<UserRole> userRoles = new HashSet<>();[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32mpublic Role() {[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic Role(Long roleId, String roleName) {[m
+[32m+[m		[32msuper();[m
+[32m+[m		[32mthis.roleId = roleId;[m
+[32m+[m		[32mthis.roleName = roleName;[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m	[32mpublic Set<UserRole> getUserRoles() {[m
+[32m+[m		[32mreturn userRoles;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setUserRoles(Set<UserRole> userRoles) {[m
+[32m+[m		[32mthis.userRoles = userRoles;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic Long getRoleId() {[m
+[32m+[m		[32mreturn roleId;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setRoleId(Long roleId) {[m
+[32m+[m		[32mthis.roleId = roleId;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getRoleName() {[m
+[32m+[m		[32mreturn roleName;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setRoleName(String roleName) {[m
+[32m+[m		[32mthis.roleName = roleName;[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/User.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/User.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e9f0d97[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/User.java[m
+[36m@@ -0,0 +1,203 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mimport java.util.Collection;[m
+[32m+[m[32mimport java.util.HashSet;[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.CascadeType;[m
+[32m+[m[32mimport javax.persistence.Entity;[m
+[32m+[m[32mimport javax.persistence.FetchType;[m
+[32m+[m[32mimport javax.persistence.GeneratedValue;[m
+[32m+[m[32mimport javax.persistence.GenerationType;[m
+[32m+[m[32mimport javax.persistence.Id;[m
+[32m+[m[32mimport javax.persistence.OneToMany;[m
+[32m+[m[32mimport javax.persistence.Table;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.security.core.GrantedAuthority;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m
+[32m+[m[32mimport com.fasterxml.jackson.annotation.JsonIgnore;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Table(name = "users")[m
+[32m+[m[32mpublic class User implements UserDetails {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Id[m
+[32m+[m	[32m@GeneratedValue(strategy = GenerationType.AUTO)[m
+[32m+[m	[32mprivate Long id;[m
+[32m+[m	[32mprivate String username;[m
+[32m+[m	[32mprivate String password;[m
+[32m+[m	[32mprivate String firstName;[m
+[32m+[m	[32mprivate String lastName;[m
+[32m+[m	[32mprivate String email;[m
+[32m+[m	[32mprivate String phone;[m
+[32m+[m	[32mprivate boolean enabled = true;[m
+[32m+[m	[32mprivate String profile;[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32m//user has many roles[m
+[32m+[m	[32m@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")[m
+[32m+[m	[32m@JsonIgnore[m
+[32m+[m	[32mprivate Set<UserRole> userRoles = new HashSet<>();[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m	[32mpublic User() {[m
+[32m+[m[41m	[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m	[32mpublic User(Long id, String username, String password, String firstName, String lastName, String email,[m
+[32m+[m			[32mString phone, boolean enabled, String profile) {[m
+[32m+[m		[32msuper();[m
+[32m+[m		[32mthis.id = id;[m
+[32m+[m		[32mthis.username = username;[m
+[32m+[m		[32mthis.password = password;[m
+[32m+[m		[32mthis.firstName = firstName;[m
+[32m+[m		[32mthis.lastName = lastName;[m
+[32m+[m		[32mthis.email = email;[m
+[32m+[m		[32mthis.phone = phone;[m
+[32m+[m		[32mthis.enabled = enabled;[m
+[32m+[m		[32mthis.profile = profile;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[41m    [m
+[32m+[m
+[32m+[m	[32mpublic Set<UserRole> getUserRoles() {[m
+[32m+[m		[32mreturn userRoles;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic void setUserRoles(Set<UserRole> userRoles) {[m
+[32m+[m		[32mthis.userRoles = userRoles;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic String getProfile() {[m
+[32m+[m		[32mreturn profile;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic void setProfile(String profile) {[m
+[32m+[m		[32mthis.profile = profile;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mpublic Long getId() {[m
+[32m+[m		[32mreturn id;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setId(Long id) {[m
+[32m+[m		[32mthis.id = id;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getUsername() {[m
+[32m+[m		[32mreturn username;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setUsername(String username) {[m
+[32m+[m		[32mthis.username = username;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getPassword() {[m
+[32m+[m		[32mreturn password;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setPassword(String password) {[m
+[32m+[m		[32mthis.password = password;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getFirstName() {[m
+[32m+[m		[32mreturn firstName;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setFirstName(String firstName) {[m
+[32m+[m		[32mthis.firstName = firstName;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getLastName() {[m
+[32m+[m		[32mreturn lastName;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setLastName(String lastName) {[m
+[32m+[m		[32mthis.lastName = lastName;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getEmail() {[m
+[32m+[m		[32mreturn email;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setEmail(String email) {[m
+[32m+[m		[32mthis.email = email;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic String getPhone() {[m
+[32m+[m		[32mreturn phone;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setPhone(String phone) {[m
+[32m+[m		[32mthis.phone = phone;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic boolean isEnabled() {[m
+[32m+[m		[32mreturn enabled;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setEnabled(boolean enabled) {[m
+[32m+[m		[32mthis.enabled = enabled;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic Collection<? extends GrantedAuthority> getAuthorities() {[m
+[32m+[m[41m		[m
+[32m+[m		[32mSet<Authority> set = new HashSet<>();[m
+[32m+[m		[32mthis.userRoles.forEach(userRole -> {[m
+[32m+[m			[32mset.add(new Authority(userRole.getRole().getRoleName()));[m
+[32m+[m		[32m});[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn set;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic boolean isAccountNonExpired() {[m
+[32m+[m		[32m// TODO Auto-generated method stub[m
+[32m+[m		[32mreturn true;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic boolean isAccountNonLocked() {[m
+[32m+[m		[32m// TODO Auto-generated method stub[m
+[32m+[m		[32mreturn true;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic boolean isCredentialsNonExpired() {[m
+[32m+[m		[32m// TODO Auto-generated method stub[m
+[32m+[m		[32mreturn true;[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/UserRole.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/UserRole.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ba5268b[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/model/UserRole.java[m
+[36m@@ -0,0 +1,57 @@[m
+[32m+[m[32mpackage com.exam.model;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.Entity;[m
+[32m+[m[32mimport javax.persistence.FetchType;[m
+[32m+[m[32mimport javax.persistence.GeneratedValue;[m
+[32m+[m[32mimport javax.persistence.GenerationType;[m
+[32m+[m[32mimport javax.persistence.Id;[m
+[32m+[m[32mimport javax.persistence.ManyToOne;[m
+[32m+[m[32mimport javax.persistence.Table;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32mpublic class UserRole {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Id[m
+[32m+[m	[32m@GeneratedValue(strategy = GenerationType.AUTO)[m
+[32m+[m	[32mprivate Long userRoleId;[m
+[32m+[m[41m	[m
+[32m+[m	[32m//user[m
+[32m+[m[32m    @ManyToOne(fetch = FetchType.EAGER)[m
+[32m+[m	[32mprivate User user;[m
+[32m+[m[41m    [m
+[32m+[m[32m    @ManyToOne[m
+[32m+[m[32m    private Role role;[m
+[32m+[m[41m    [m
+[32m+[m[32m    public UserRole() {[m
+[32m+[m[41m			[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic Long getUserRoleId() {[m
+[32m+[m		[32mreturn userRoleId;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setUserRoleId(Long userRoleId) {[m
+[32m+[m		[32mthis.userRoleId = userRoleId;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic User getUser() {[m
+[32m+[m		[32mreturn user;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setUser(User user) {[m
+[32m+[m		[32mthis.user = user;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic Role getRole() {[m
+[32m+[m		[32mreturn role;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mpublic void setRole(Role role) {[m
+[32m+[m		[32mthis.role = role;[m
+[32m+[m	[32m}[m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/RoleRepository.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/RoleRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82c654d[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/RoleRepository.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.exam.repo;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.Role;[m
+[32m+[m
+[32m+[m[32mpublic interface RoleRepository extends JpaRepository<Role, Long> {[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/UserRepository.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/UserRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..21acffd[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/repo/UserRepository.java[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mpackage com.exam.repo;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m
+[32m+[m[32mpublic interface UserRepository extends JpaRepository<User, Long> {[m
+[32m+[m[41m	[m
+[32m+[m	[32mpublic User findByUsername(String username);[m[41m [m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/UserService.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/UserService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a968c4[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/UserService.java[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32mpackage com.exam.service;[m
+[32m+[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m[32mimport com.exam.model.UserRole;[m
+[32m+[m
+[32m+[m[32mpublic interface UserService {[m
+[32m+[m[41m	[m
+[32m+[m	[32m//creating user[m
+[32m+[m	[32mpublic User createUser(User user, Set<UserRole> userRoles) throws Exception;[m
+[32m+[m	[32m//get user by username[m
+[32m+[m	[32mpublic User getUser(String username);[m
+[32m+[m	[32m//delete user by id[m
+[32m+[m	[32mpublic void deleteUser(Long userId);[m
+[32m+[m	[32m//update user by id[m
+[32m+[m[41m	[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserDetailsServiceImpl.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserDetailsServiceImpl.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..12804b8[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserDetailsServiceImpl.java[m
+[36m@@ -0,0 +1,31 @@[m
+[32m+[m[32mpackage com.exam.service.impl;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetails;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UserDetailsService;[m
+[32m+[m[32mimport org.springframework.security.core.userdetails.UsernameNotFoundException;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m[32mimport com.exam.repo.UserRepository;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class UserDetailsServiceImpl implements UserDetailsService{[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserRepository userRepository;[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {[m
+[32m+[m[41m		[m
+[32m+[m		[32mUser user= this.userRepository.findByUsername(username);[m
+[32m+[m		[32mif (user==null) {[m
+[32m+[m[41m			[m
+[32m+[m			[32mSystem.out.println("User no found");[m
+[32m+[m			[32mthrow new UsernameNotFoundException("No user found !!");[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn user;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserServiceImpl.java b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserServiceImpl.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8219276[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/java/com/exam/service/impl/UserServiceImpl.java[m
+[36m@@ -0,0 +1,58 @@[m
+[32m+[m[32mpackage com.exam.service.impl;[m
+[32m+[m
+[32m+[m[32mimport java.util.Set;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.beans.factory.annotation.Autowired;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport com.exam.model.User;[m
+[32m+[m[32mimport com.exam.model.UserRole;[m
+[32m+[m[32mimport com.exam.repo.RoleRepository;[m
+[32m+[m[32mimport com.exam.repo.UserRepository;[m
+[32m+[m[32mimport com.exam.service.UserService;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class UserServiceImpl implements UserService {[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate UserRepository userRepository;[m
+[32m+[m[41m	[m
+[32m+[m	[32m@Autowired[m
+[32m+[m	[32mprivate RoleRepository roleRepository;[m
+[32m+[m[41m    [m
+[32m+[m[41m	[m
+[32m+[m	[32m//creating user[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic User createUser(User user, Set<UserRole> userRoles) throws Exception {[m
+[32m+[m[41m		[m
+[32m+[m		[32mUser local = this.userRepository.findByUsername(user.getUsername());[m
+[32m+[m		[32mif(local != null) {[m
+[32m+[m[41m			[m
+[32m+[m			[32mSystem.out.println("User is already there !!");[m
+[32m+[m			[32mthrow new Exception("User already present !!");[m
+[32m+[m		[32m}else {[m
+[32m+[m			[32m//user create[m
+[32m+[m			[32mfor(UserRole ur : userRoles) {[m
+[32m+[m				[32mroleRepository.save(ur.getRole());[m
+[32m+[m			[32m}[m
+[32m+[m			[32muser.getUserRoles().addAll(userRoles);[m
+[32m+[m			[32mlocal = this.userRepository.save(user);[m
+[32m+[m		[32m}[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn local;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m    //getting user by username[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic User getUser(String username) {[m
+[32m+[m		[32mreturn this.userRepository.findByUsername(username);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m@Override[m
+[32m+[m	[32mpublic void deleteUser(Long userId) {[m
+[32m+[m		[32mthis.userRepository.deleteById(userId);[m
+[32m+[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/main/resources/application.properties b/FinalBackEndProgramOnExamPortal/src/main/resources/application.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7494f14[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/main/resources/application.properties[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mserver.port=9001[m
+[32m+[m[32m#database configuration[m
+[32m+[m[32mspring.datasource.driver_class-name = com.mysql.cj.jdbc.Driver[m
+[32m+[m[32mspring.datasource.url = jdbc:mysql://localhost:3306/finalexamdb?useSSL = false&allowPublicKeyRetrieval=true[m
+[32m+[m[32mspring.datasource.username = root[m
+[32m+[m[32mspring.datasource.password = Dell@9997[m
+[32m+[m
+[32m+[m[32m#Hibernate Configuration[m
+[32m+[m[32mspring.jpa.hibernate.ddl-auto = update[m
+[32m+[m[32mspring.jpa.show-sql = true[m
+[32m+[m[32mspring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect[m
+[32m+[m[32mspring.jpa.properties.formate_sql = true[m
+[32m+[m
+[1mdiff --git a/FinalBackEndProgramOnExamPortal/src/test/java/com/exam/FinalExamserverApplicationTests.java b/FinalBackEndProgramOnExamPortal/src/test/java/com/exam/FinalExamserverApplicationTests.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0ec3224[m
+[1m--- /dev/null[m
+[1m+++ b/FinalBackEndProgramOnExamPortal/src/test/java/com/exam/FinalExamserverApplicationTests.java[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mpackage com.exam;[m
+[32m+[m
+[32m+[m[32mimport org.junit.jupiter.api.Test;[m
+[32m+[m[32mimport org.springframework.boot.test.context.SpringBootTest;[m
+[32m+[m
+[32m+[m[32m@SpringBootTest[m
+[32m+[m[32mclass FinalExamserverApplicationTests {[m
+[32m+[m
+[32m+[m	[32m@Test[m
+[32m+[m	[32mvoid contextLoads() {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
