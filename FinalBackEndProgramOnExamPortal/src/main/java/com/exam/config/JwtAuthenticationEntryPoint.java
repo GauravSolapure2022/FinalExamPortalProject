@@ -3,6 +3,7 @@
 package com.exam.config;
 
 import java.io.IOException;
+import java.time.Clock;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,12 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
+		System.out.println("Guarav");
 		
 		response.sendError(401, "Unauthorized");
+		
 		
 	}
 
 }
+
